@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Hide the default checkbox */
+.checkbox-input[type='checkbox'] {
+  display: none;
+}
+
+/* Style the label element */
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Create the checkmark */
+.checkbox-label::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ff6000;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Style the checkbox when it is checked */
+.checkbox-input:checked + .checkbox-label::before {
+  color: #fff;
+  content: '\2713'; /* Checkmark unicode character */
+  text-align: center;
+  font-size: 18px;
+  line-height: 23px;
+  background-color: #ff6000;
+  border-color: #ff6000;
+}
+
+@media (max-width: 600px) {
+  .checkbox-label::before {
+    width: 20px;
+    height: 20px;
+  }
+  .checkbox-input:checked + .checkbox-label::before {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
